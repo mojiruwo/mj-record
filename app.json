@@ -1,6 +1,10 @@
 {
   "pages": [
-  "pages/index/index"
+    "pages/index/index",
+    "pages/read/read",
+    "pages/user/index",
+    "pages/myread/index",
+    "pages/play/play"
   ],
   "window": {
     "navigationBarTextStyle": "light",
@@ -15,30 +19,30 @@
       {
         "pagePath": "pages/index/index",
         "text": "领读",
-        "iconPath": "images/icon_classify.png",
-        "selectedIconPath": "images/icon_classify_select.png"
+        "iconPath": "images/icon_lingdu.png",
+        "selectedIconPath": "images/icon_lingdu_select.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/read/read",
         "text": "朗读",
-        "iconPath": "images/icon_home.png",
-        "selectedIconPath": "images/icon_home_select.png"
+        "iconPath": "images/icon_yuedu.png",
+        "selectedIconPath": "images/icon_yuedu_select.png"
       },
       {
         "pagePath": "pages/index/index",
         "text": "活动",
-        "iconPath": "images/icon_home.png",
-        "selectedIconPath": "images/icon_home_select.png"
+        "iconPath": "images/icon_huodong.png",
+        "selectedIconPath": "images/icon_huodong_select.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/user/index",
         "text": "我的",
-        "iconPath": "images/icon_home.png",
-        "selectedIconPath": "images/icon_home_select.png"
+        "iconPath": "images/icon_user.png",
+        "selectedIconPath": "images/icon_user_select.png"
       }
     ],
     "color": "#c6c6c6",
-    "selectedColor": "green",
+    "selectedColor": "#FF3333",
     "backgroundColor": "#f7f7fa",
     "borderStyle": "white",
     "position": "bottom"

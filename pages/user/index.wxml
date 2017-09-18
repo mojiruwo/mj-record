@@ -1,0 +1,22 @@
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+  </view>
+  <navigator url="/pages/myread/index" hover-class="none">
+  <view class="my-item">
+    <image src="/images/icon_yuedu.png" ></image>我的朗读
+  </view>
+  </navigator>
+  <navigator url="/pages/myinfo/index" hover-class="none">
+  <view class="my-item">
+    <image src="/images/icon_user.png" ></image>个人信息
+  </view>
+  </navigator>
+  <!-- <view wx:if="{{!userMobile}}" class="my-item" style="border:none;padding-right:150rpx;width:auto;">
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">绑定手机号码</button>
+  </view>
+  <view wx:if="{{userMobile}}" class="my-item" style="border:none;padding-right:150rpx;width:auto;">
+    {{userMobile}}
+  </view> -->
+</view>

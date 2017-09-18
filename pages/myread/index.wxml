@@ -1,0 +1,23 @@
+<scroll-view scroll-y="true" bindscroll="scroll">
+  <view class="mobi_title">
+    <text class="mobi_icon"></text>
+    <text>为你推荐最新领读</text>
+  </view>
+  <block wx:for-items="{{list}}" wx:for-item="list" wx:key="list.id">
+  <navigator url="/pages/play/play" hover-class="none">
+    <view class="list" data-id="{{list.id}}">
+      <view class="list-img">
+        <image class="video-img" mode="scaleToFill" src="{{list.image}}"></image>
+      </view>
+      <view class="list-detail">
+        <view class="list-title"><text>{{list.title}}</text></view>
+        <view class="list-tag"><view class="state">{{list.time}}s</view>
+        <view class="join">
+        <image src="/images/icon_play.png" class="icon_play"></image>
+        <text class="list-num">{{list.num}}</text>次播放</view></view>
+        <!-- <view class="list-info"><text>{{list.address}}</text>|<text>{{list.time}}</text></view> -->
+      </view> 
+    </view>
+  </navigator>
+  </block>
+</scroll-view>

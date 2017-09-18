@@ -1,0 +1,53 @@
+<view id="playingpage" class=" {{playing?'playing':''}}">
+  <image src="/images/cm2_default_play_bg-ip6@2x.jpg" id="coverbg" />
+  <!-- <image id="playing-bg" class="blurbg" mode="aspectFill" src="/images/example0.png" /> -->
+  <view id="playing-zz">
+    <image src="/images/aag.png" />
+  </view>
+  <view id="playing-main">
+    <image id="playingmainbg" src="/images/play.png" />
+    <image src="{{recordinfo.coverImgUrl}}" bindtap="loadlrc" id="pmaincover" />
+  </view>
+  <view id="playing-actwrap">
+    <!-- <view id="playing-info" wx:if="{{!showlrc}}">
+      <view class="pi-act" bindtap="songheart">
+        <image src="/images/cm2_play_icn_love@2x.png" wx:if="{{!music.st}}" />
+        <image src="/images/cm2_play_icn_loved@2x.png" wx:if="{{music.st}}" />
+      </view>
+      <view class="pi-act" bindtap="downmusic">
+        <image src="/images/cm2_play_icn_dld@2x.png" />
+      </view>
+      <view class="pi-act commentscount">
+        <navigator url="">
+          <image  src="/images/cm2_play_icn_cmt@2x.png" />
+          <image  src="/images/cm2_play_icn_cmt_num@2x.png" />
+          <text >999</text>
+        </navigator>
+      </view>
+      <view class="pi-act" bindtap="togminfo">
+        <image src="/images/cm2_play_icn_more@2x.png" />
+      </view>
+    </view> -->
+    <view id="playingaction">
+      <!-- <view class="pa-maction" data-other="-1" bindtap="playother">
+        <image src="/images/ajh.png" />
+      </view> -->
+      <view class="pa-saction" bindtap="zantoggle">
+        <image src="/images/zan.png" wx:if="{{!recordinfo.zan}}" />
+        <image src="/images/zan2.png" wx:if="{{recordinfo.zan}}" />
+      </view>
+      <view class="pa-baction" hidden="{{!playing}}" bindtap="playingtoggle" data-p="{{playing}}">
+        <image id='pa-playing' src="/images/ajd.png" />
+      </view>
+      <view class="pa-baction" hidden="{{playing}}" bindtap="playingtoggle" data-p="{{playing}}">
+        <image id='pa-pause' src="/images/ajf.png" />
+      </view>
+      <!-- <view class="pa-maction" data-other="1" bindtap="playother">
+        <image src="/images/ajb.png" />
+      </view> 
+      <view class="pa-saction" bindtap="togpinfo">
+        <image src="/images/cm2_icn_list@2x.png" />
+      </view>-->
+    </view>
+  </view>
+</view>

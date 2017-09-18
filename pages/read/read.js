@@ -1,32 +1,25 @@
-const app = getApp();
-// 创建页面实例对象
+var app = getApp()
 Page({
-  /**
-   * 页面名称
-   */
-  name: "",
-  /**
-   * 页面的初始数据
-   */
   data: {
-    imgUrls: [],
-    indicatorDots: true,
-    indicatorActiveColor:'#ffffff',
-    autoplay: true,
-    interval: 5000,
-    duration: 1000,
-    backgroundimg:"https://ws2.sinaimg.cn/large/006tNc79gy1fgphwt8nq8j30e609f3z4.jpg",
+    systemInfo: {},
+    _api: {},
+    navbar: ['最新作品', '周排行', '获奖作品'],
+    currentNavbar: '0',
+    swipers: [],
+    list: [],
+    hot_last_id: 0,
+    latest_list: [],
+    latest_last_id: 0,
     list: [
       {
         'id': '1',
         'image': 'https://ws1.sinaimg.cn/large/006tNc79gy1fgphwnl37mj30dw09agmg.jpg',
-        'image': '/images/demo.jpg',
         'title': '对话产品总监 | 深圳·北京PM大会 【深度对话小米/京东/1号店/百度等产品总监】',
         'num':'2532722',
         'time':'03:39',
         'date': '10月09日 17:59',
         'address': '深圳市·南山区',
-        'author': 'admin'
+        'author': '北京市·朝阳区'
       },
       {
         'id': '1',
@@ -80,72 +73,87 @@ Page({
       }
     ]
   },
+
+  onLoad() {
+    var that = this
+    wx.getSystemInfo(function (res) {
+      that.setData({
+        systemInfo: res
+      })
+    })
+
+    /*
+    this.pullUpLoad()*/
+  },
   /**
-   * 生命周期函数--监听页面加载
+   * 点击跳转详情页
    */
-  onLoad () {
-    let that = this;
-    //that.list();
-  },
-  list(){
-    let that = this;
-    //调用接口获取所有字段
-    var data = {token:config.TOKEN}
-    http.httpGet("/api/article/videoindex" ,data,function(res){
-        console.log(res);
-        that.setData({
-          list: res,
-          backgroundimg: res[0].bg_image,
-          activeid: res[0].id,
-          share_title: res[0].title,
-          share_desc: res[0].title
-        })
-        wx.setNavigationBarTitle({
-          title: res[0].title
-        })
-    });
-  },
-  changevideo(e){
-    console.log(e);
+  /**
+   * 切换 navbar
+   */
+  swichNav(e) {
     this.setData({
-      backgroundimg: this.data.list[e.detail.current].image,
-      activeid: this.data.list[e.detail.current].id,
-      share_title: this.data.list[e.detail.current].title,
-      share_desc: this.data.list[e.detail.current].title,
+      currentNavbar: e.currentTarget.dataset.idx
     })
-    wx.setNavigationBarTitle({
-      title: this.data.list[e.detail.current].title
-    })
+    /*if (e.currentTarget.dataset.idx == 1 && this.data.latest_list.length == 0) {
+      this.pullUpLoadLatest()
+    }*/
   },
+
+  /**
+   * 下拉刷新
+   */
   onPullDownRefresh() {
-      let that = this
-      //that.list();
-      wx.stopPullDownRefresh()
+    switch (this.data.currentNavbar) {
+      case '0':
+        this.setData({
+          list: [],
+          hot_last_id: 0
+        })
+        this.pullUpLoad()
+        break
+      case '1':
+        this.setData({
+          latest_list: [],
+          latest_list_id: 0
+        })
+        this.pullUpLoadLatest()
+        break
+      case '2':
+        wx.stopPullDownRefresh()
+        break
+    }
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady () {
 
+  /**
+   * [推荐]上拉刷新
+   */
+  pullUpLoad() {
+    wx.showNavigationBarLoading()
+    /*api.get(api.HOST_IOS + api.HOT + '?last_id=' + this.data.hot_last_id)
+      .then(res => {
+        this.setData({
+          list: this.data.list.concat(res.data.list),
+          hot_last_id: res.data.last_id
+        })
+        wx.hideNavigationBarLoading()
+        wx.stopPullDownRefresh()
+      })*/
   },
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow () {
 
-  },
   /**
-   * 生命周期函数--监听页面隐藏
+   * [最新]上拉刷新
    */
-  onHide () {
-
-  },
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload () {
-
+  pullUpLoadLatest() {
+    wx.showNavigationBarLoading()
+    /*api.get(api.HOST_IOS + api.LATEST + '?last_id=' + this.data.latest_last_id)
+      .then(res => {
+        this.setData({
+          latest_list: this.data.latest_list.concat(res.data.list),
+          latest_last_id: res.data.last_id
+        })
+        wx.hideNavigationBarLoading()
+        wx.stopPullDownRefresh()
+      })*/
   }
-  //以下为自定义点击事件
 })
-

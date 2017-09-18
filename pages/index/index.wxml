@@ -1,19 +1,28 @@
-<scroll-view scroll-y="true" bindscroll="scroll">
-  <view class="mobi_title">
-    <text class="mobi_icon"></text>
-    <text>会议精灵为你推荐</text>
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="bgi">
+    <image src="{{backgroundimg}}"></image>
+  </view> -->
+  <view class="bgr">
+    <swiper indicator-dots="{{indicatorDots}}" bindchange="changevideo" circular="true">
+    <block wx:for="{{list}}">
+    <navigator url="/pages/play/play" hover-class="none">
+      <swiper-item>
+        <view class="item">
+          <!-- <view class="span">{{item.title}}</view> -->
+          <view class="title">{{item.title}}</view>
+          <view class="span2"></view>
+          <view class="item_p">
+            {{item.author}}
+          </view>
+          <view class="item_image">
+            <image src="{{item.image}}" mode="aspectFill" ></image>
+          </view>
+          <!-- <view class="span2">{{item.num}}人在阅读</view> -->
+        </view>
+      </swiper-item>
+    </navigator>
+    </block>
+    </swiper>
   </view>
-  <block wx:for-items="{{lists}}" wx:for-item="list" wx:key="list.id">
-    <view class="list" data-id="{{list.id}}">
-      <view class="list-img">
-        <image class="video-img" mode="scaleToFill" src="{{list.image}}"></image>
-      </view>
-      <view class="list-detail">
-        <view class="list-title"><text>{{list.title}}</text></view>
-        <view class="list-tag"><view class="state">{{list.state}}</view><view class="join"><text class="list-num">{{list.num}}</text>人报名</view></view>
-        <view class="list-info"><text>{{list.address}}</text>|<text>{{list.time}}</text></view>
-      </view> 
-    </view>
-  </block>
-</scroll-view>
-<include src="../layout/footer.wxml"/>
+</view>
