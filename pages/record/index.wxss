@@ -1,0 +1,73 @@
+/* pages/record/index.wxss */
+.container{
+	width: 96%;
+	margin:2%;
+	background-color: #fff;
+}
+.mj_scroll_text{
+	height: 600rpx;
+	width: 80%;
+	padding:0 10%;
+	line-height: 120%;
+	padding-top: 20%;
+}
+.mj_menu{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	height: 152rpx;
+	width: 100%;
+	font-size: 28rpx;
+	color: #8a8a8a;
+}
+.mj_menu .top_img{
+	height: 32rpx;
+	line-height: 32rpx;
+}
+.mj_menu .top_img image{
+	width: 100%;
+	height: 32rpx;
+}
+.mj_menulist{
+	/*background-color: #fff;*/
+	position: relative;
+}
+.mj_menulist image{
+	
+	display: block;
+	text-align: center;
+	margin: auto;
+}
+.mj_menu .mj_menuleft image,.mj_menu .mj_menuright image{
+	width: 70rpx;
+	height: 70rpx;
+}
+.mj_menu .mj_menucenter image{
+	width: 120rpx;
+	height: 120rpx;
+	margin-top: -12rpx;
+	position: absolute;
+	margin-left: 67rpx;
+}
+.mj_menu .mj_menuleft,.mj_menu .mj_menucenter,.mj_menu .mj_menuright{
+	float: left;
+	height: 120rpx;
+	width: 33%;
+	text-align: center;
+	background-color: #fff;
+}
+.mj_time{
+	width: 250rpx;
+	height: 250rpx;
+	margin: auto;
+	text-align: center;
+	border: 8rpx solid red;
+	border-radius: 50%;
+	line-height: 250rpx;
+}
+/*.mj_menu .mj_menuleft,.mj_menu .mj_menuright{
+	width: 40%;
+}
+.mj_menu .mj_menucenter{
+	width: 20%;
+}*/

@@ -4,7 +4,8 @@
     "pages/read/read",
     "pages/user/index",
     "pages/myread/index",
-    "pages/play/play"
+    "pages/play/play",
+    "pages/record/index"
   ],
   "window": {
     "navigationBarTextStyle": "light",

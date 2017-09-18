@@ -21,3 +21,8 @@
   </navigator>
   </block>
 </scroll-view>
+<view class="icon_yuyin">
+<navigator url="/pages/record/index">
+<image src="/images/icon_yuyin.png"></image>
+</navigator>
+</view>

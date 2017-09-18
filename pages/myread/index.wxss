@@ -116,3 +116,15 @@ scroll-view{
   height: 40rpx;
   vertical-align: middle;
 }
+.icon_yuyin{
+  position: fixed;
+  right: 20rpx;
+  bottom: 20rpx;
+  border:3rpx solid #8a8a8a;
+  border-radius:50%;
+  background-color: #fff;
+}
+.icon_yuyin image{
+  width: 120rpx;
+  height: 120rpx;
+}

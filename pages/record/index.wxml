@@ -1,0 +1,35 @@
+<!--pages/record/index.wxml-->
+<view class="container">
+	<scroll-view scroll-y class="mj_scroll_text">
+	英语配音追随着社会的进步，配音的发展潮流，配音英语已然越来越专业化，对配音机构的配音录音设备和配音员的配音技巧，配音表达方式多个方面都有了更深一步的要求。如今国内的专业英语配音机构更能在配音行业里面吃香。深圳互动专业配音机构，创业至今十余载，一直注重于专业英语配音的研究开发，多年来向社会各界提供多种专业的英语配音，专业的配音品质，实力的配音品牌，令深圳互动英语配音机构在国内配音界拥有良好的专业英语配音口碑，受到了社会一致的好评和肯定。
+	</scroll-view>
+	<view class="mj_time">00:00</view>
+	<!-- <view>
+		<view><image src="/images/icon_yuyin.png"></image></view>
+		<view>录音</view>
+	</view>
+	<view><image src="/images/icon_zanting.png"></image></view>
+	<view>
+		<view>重录</view>
+		<view><view><image src="/images/icon_zanting.png"></image></view>
+		<view>录音</view></view>
+		<view>保存</view>
+	</view> -->
+</view>
+
+<view class="mj_menu">
+	<view class="top_img"><image src="/images/menu_ba_ba.png"></image></view>
+	<view class="mj_menulist">
+		<view class="mj_menuleft">
+		<image src="/images/icon_quxiao.png"></image>
+		录音
+		</view>
+		<view class="mj_menucenter">
+		<image src="/images/icon_luyin.png"></image>
+		</view>
+		<view class="mj_menuright">
+		<image src="/images/icon_zanting.png"></image>
+		重录
+		</view>
+	</view>
+</view>
